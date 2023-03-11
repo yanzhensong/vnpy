@@ -58,6 +58,18 @@ class OptimizationSetting:
         self.params[name] = value_list
 
         return True, f"范围参数添加成功，数量{len(value_list)}"
+    
+    def add_parameter_by_list(
+        self,
+        name: str,
+        value_list: List
+    ) -> Tuple[bool, str]:
+        """"""
+        if value_list is None:
+            return False, "value_list不合法"
+        self.params[name] = value_list
+
+        return True, f"范围参数添加成功，数量{len(value_list)}"
 
     def set_target(self, target_name: str) -> None:
         """"""
